@@ -9,7 +9,7 @@ class Triangle
     @side_2 = sides[1]
     @side_3 = sides[2]
 
-    if sides.any? {|x| x == 0} || (sides.max - (sides.inject(0) {|sum, x| sum + x} - sides.max) >= 0)
+    if sides.any? {|x| x == 0} || (@side_1**2 + @side_2**2 != @side_3**2)
       begin
         raise TriangleError
       end
